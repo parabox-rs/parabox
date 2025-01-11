@@ -1,0 +1,31 @@
+// A box that triggers a cycle does not necessarily move.
+// Expect the boxes in #cycle to cycle and #outer_box to remain in place.
+
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #outer_box solid
+DEFINE WALL #outer_wall
+
+DEFINE BOX #cycle size (5, 5)
+DEFINE BOX #box1 solid
+DEFINE BOX #box2 solid
+DEFINE BOX #box3 solid
+DEFINE WALL #wall
+
+DEFINE ALIAS #outer_alias ref #cycle
+
+PLACE #outer_box at (3, 2) in #container
+PLACE #outer_wall at (1, 2) in #container
+PLACE #outer_alias at (2, 2) in #container
+
+PLACE #cycle at (1, 2) in #cycle
+PLACE #box1 at (2, 2) in #cycle
+PLACE #box2 at (3, 2) in #cycle
+PLACE #box3 at (4, 2) in #cycle
+PLACE #wall at (0, 2) in #cycle
+
+PUSH #outer_box west MOVED
+
+EXPECT #outer_box at (3, 2) in #container
+EXPECT #box1 at (4, 2) in #cycle
+EXPECT #box2 at (2, 2) in #cycle
+EXPECT #box3 at (3, 2) in #cycle

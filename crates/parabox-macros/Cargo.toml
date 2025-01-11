@@ -1,0 +1,18 @@
+[package]
+name = "parabox-macros"
+version.workspace = true
+edition.workspace = true
+readme.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords = ["parabox", "macros"]
+description = "Procedural macros for the Parabox game engine."
+
+[dependencies]
+proc-macro2 = "1.0.92"
+quote = "1.0.9"
+syn = { version = "2.0.95", features = ["full"] }
+
+[lib]
+proc-macro = true

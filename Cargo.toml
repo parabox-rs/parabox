@@ -1,0 +1,21 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+license = "Apache-2.0"
+authors = ["Philip Fan <topfyf@qq.com>"]
+repository = "https://github.com/parabox-rs/parabox"
+
+[workspace.dependencies]
+parabox = { path = "crates/parabox", version = "0.1.0" }
+parabox-parser = { path = "crates/parabox-parser", version = "0.1.0" }
+parabox-macros = { path = "crates/parabox-macros", version = "0.1.0" }
+slotmap = "1.0.7"
+unscanny = "0.1.0"
+ecow = "0.2.3"
+tracing = { version = "0.1.41", features = ["release_max_level_info"] }
+tracing-subscriber = "0.3.19"

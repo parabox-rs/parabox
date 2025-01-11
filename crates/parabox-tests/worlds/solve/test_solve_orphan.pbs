@@ -1,0 +1,6 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #box solid
+
+PLACE #box at (4, 2) in #container
+
+PUSH #box east MOVED

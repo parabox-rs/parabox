@@ -1,0 +1,4 @@
+array_width = 60
+attr_fn_like_width = 60
+chain_width = 60
+wrap_comments = true

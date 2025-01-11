@@ -1,0 +1,8 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #box solid
+
+PLACE #box at (2, 2) in #container
+
+PUSH #box east MOVED
+
+EXPECT #box at (3, 2) in #container

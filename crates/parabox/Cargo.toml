@@ -1,0 +1,16 @@
+[package]
+name = "parabox"
+version.workspace = true
+edition.workspace = true
+readme.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords = ["parabox"]
+categories = ["games"]
+description = "The Parabox game engine."
+
+[dependencies]
+parabox-macros = { workspace = true }
+slotmap = { workspace = true }
+tracing = { workspace = true }

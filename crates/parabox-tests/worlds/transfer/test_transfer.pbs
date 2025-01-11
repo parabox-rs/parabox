@@ -1,0 +1,35 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #container1 size (5, 5)
+DEFINE BOX #container2 size (3, 3)
+DEFINE BOX #box solid
+DEFINE WALL #wall
+
+PLACE #container1 at (1, 2) in #container
+PLACE #container2 at (2, 2) in #container
+PLACE #wall at (3, 2) in #container
+
+// 1/10 -> 0/3
+// 3/10 -> 0/3
+// 5/10 -> 1/3
+// 7/10 -> 2/3
+// 9/10 -> 2/3
+
+PLACE #box at (4, 0) in #container1
+PUSH #box east MOVED
+EXPECT #box at (0, 0) in #container2
+
+PLACE #box at (4, 1) in #container1
+PUSH #box east MOVED
+EXPECT #box at (0, 0) in #container2
+
+PLACE #box at (4, 2) in #container1
+PUSH #box east MOVED
+EXPECT #box at (0, 1) in #container2
+
+PLACE #box at (4, 3) in #container1
+PUSH #box east MOVED
+EXPECT #box at (0, 2) in #container2
+
+PLACE #box at (4, 4) in #container1
+PUSH #box east MOVED
+EXPECT #box at (0, 2) in #container2

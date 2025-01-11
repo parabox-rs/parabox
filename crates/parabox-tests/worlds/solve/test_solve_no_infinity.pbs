@@ -1,0 +1,5 @@
+DEFINE BOX #box size (5, 5)
+
+PLACE #box at (4, 2) in #box
+
+PUSH #box east MOVED
