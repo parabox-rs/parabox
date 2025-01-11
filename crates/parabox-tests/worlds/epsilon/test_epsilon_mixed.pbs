@@ -1,0 +1,24 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #box solid
+DEFINE BOX #parabox1 size (5, 5)
+DEFINE BOX #parabox2 size (5, 5)
+DEFINE ALIAS #alias1 ref #parabox1
+DEFINE ALIAS #alias2 ref #parabox2
+DEFINE EPSILON #epsilon1 ref #parabox1 size (5, 5)
+DEFINE EPSILON #epsilon2 ref #parabox2 size (5, 5)
+DEFINE WALL #wall
+DEFINE WALL #wall1
+DEFINE WALL #wall2
+
+PLACE #box at (1, 2) in #container
+PLACE #parabox1 at (2, 2) in #container
+PLACE #wall at (3, 2) in #container
+
+PLACE #alias1 at (0, 2) in #parabox2
+PLACE #alias2 at (0, 2) in #parabox1
+PLACE #wall1 at (1, 2) in #parabox2
+PLACE #wall2 at (1, 2) in #parabox1
+
+PUSH #box east MOVED
+
+EXPECT #box at (0, 2) in #epsilon1

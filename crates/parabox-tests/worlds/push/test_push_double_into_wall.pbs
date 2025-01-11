@@ -1,0 +1,10 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #box1 solid
+DEFINE BOX #box2 solid
+DEFINE WALL #wall
+
+PLACE #box1 at (1, 2) in #container
+PLACE #box2 at (2, 2) in #container
+PLACE #wall at (3, 2) in #container
+
+PUSH #box1 east STATIC

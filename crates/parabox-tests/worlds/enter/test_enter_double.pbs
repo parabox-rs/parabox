@@ -1,0 +1,18 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #outer size (5, 5)
+DEFINE BOX #inner size (5, 5)
+DEFINE BOX #box solid
+DEFINE WALL #outer_wall
+DEFINE WALL #inner_wall
+
+PLACE #outer at (2, 2) in #container
+PLACE #inner at (0, 2) in #outer
+PLACE #box at (1, 2) in #container
+PLACE #outer_wall at (3, 2) in #container
+PLACE #inner_wall at (1, 2) in #outer
+
+PUSH #box east MOVED
+
+EXPECT #outer at (2, 2) in #container
+EXPECT #inner at (0, 2) in #outer
+EXPECT #box at (0, 2) in #inner

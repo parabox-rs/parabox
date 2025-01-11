@@ -1,0 +1,17 @@
+DEFINE BOX #parabox1 size (5, 5)
+DEFINE BOX #parabox2 size (5, 5)
+DEFINE INFINITY #infinity1 ref #parabox1
+DEFINE INFINITY #infinity2 ref #parabox2
+
+PLACE #parabox1 at (4, 2) in #parabox2
+PLACE #parabox2 at (4, 2) in #parabox1
+PLACE #infinity1 at (2, 2) in #parabox1
+PLACE #infinity2 at (2, 2) in #parabox2
+
+PUSH #parabox1 east MOVED
+
+// The exit trace of #parabox1:
+// 1. #parabox2
+// 2. #parabox1
+// 3. #parabox2 -> #infinity2
+EXPECT #parabox1 at (3, 2) in #parabox2

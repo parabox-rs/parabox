@@ -1,0 +1,6 @@
+DEFINE VOID #container size (5, 5)
+DEFINE BOX #box1 solid
+
+PLACE #box1 at (4, 2) in #container
+
+PUSH #box1 east STATIC

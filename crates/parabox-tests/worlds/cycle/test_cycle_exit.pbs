@@ -1,0 +1,18 @@
+DEFINE BOX #cycle size (5, 5)
+DEFINE BOX #box1 solid
+DEFINE BOX #box2 solid
+DEFINE BOX #box3 solid
+DEFINE BOX #box4 solid
+
+PLACE #cycle at (0, 2) in #cycle
+PLACE #box1 at (1, 2) in #cycle
+PLACE #box2 at (2, 2) in #cycle
+PLACE #box3 at (3, 2) in #cycle
+PLACE #box4 at (4, 2) in #cycle
+
+PUSH #box1 east MOVED
+
+EXPECT #box1 at (2, 2) in #cycle
+EXPECT #box2 at (3, 2) in #cycle
+EXPECT #box3 at (4, 2) in #cycle
+EXPECT #box4 at (1, 2) in #cycle

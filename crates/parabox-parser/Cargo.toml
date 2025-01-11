@@ -1,0 +1,17 @@
+[package]
+name = "parabox-parser"
+version.workspace = true
+edition.workspace = true
+readme.workspace = true
+authors.workspace = true
+repository.workspace = true
+keywords = ["parabox", "parser"]
+categories = ["games", "parser-implementations"]
+description = "The parser and the executor for the Parabox language."
+
+[dependencies]
+parabox = { workspace = true }
+parabox-macros = { workspace = true }
+unscanny = { workspace = true }
+ecow = { workspace = true }
+tracing = { workspace = true }

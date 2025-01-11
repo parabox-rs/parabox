@@ -1,0 +1,11 @@
+DEFINE BOX #parabox size (5, 5)
+DEFINE INFINITY #infinity ref #parabox
+DEFINE INFINITY #infinity2 ref #infinity
+
+PLACE #parabox at (4, 2) in #parabox
+PLACE #infinity at (4, 3) in #parabox
+PLACE #infinity2 at (2, 2) in #parabox
+
+PUSH #parabox east MOVED
+
+EXPECT #parabox at (3, 2) in #parabox

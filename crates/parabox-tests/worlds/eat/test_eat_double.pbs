@@ -1,0 +1,16 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #first size (5, 5)
+DEFINE BOX #second size (5, 5)
+DEFINE BOX #third solid
+DEFINE WALL #wall
+
+PLACE #first at (1, 2) in #container
+PLACE #second at (2, 2) in #container
+PLACE #third at (3, 2) in #container
+PLACE #wall at (4, 2) in #container
+
+PUSH #first east MOVED
+
+EXPECT #first at (2, 2) in #container
+EXPECT #second at (3, 2) in #container
+EXPECT #third at (4, 2) in #second

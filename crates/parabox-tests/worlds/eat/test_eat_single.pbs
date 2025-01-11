@@ -1,0 +1,13 @@
+DEFINE BOX #container size (5, 5)
+DEFINE BOX #eat size (5, 5)
+DEFINE BOX #ate solid
+DEFINE WALL #wall
+
+PLACE #eat at (1, 2) in #container
+PLACE #ate at (2, 2) in #container
+PLACE #wall at (3, 2) in #container
+
+PUSH #eat east MOVED
+
+EXPECT #eat at (2, 2) in #container
+EXPECT #ate at (4, 2) in #eat
