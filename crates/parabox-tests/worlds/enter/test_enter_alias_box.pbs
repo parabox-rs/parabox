@@ -10,3 +10,4 @@ PLACE #wall at (3, 2) in #container
 PUSH #box east MOVED
 
 EXPECT #box at (0, 2) in #box
+EXPECT #alias at (2, 2) in #container
