@@ -1,0 +1,16 @@
+[package]
+name = "parabox-format"
+version = "0.1.0"
+edition.workspace = true
+readme.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+parabox = { workspace = true }
+anstyle = { workspace = true }
+slotmap = { workspace = true }
+
+[dev-dependencies]
+parabox-parser = { workspace = true }
