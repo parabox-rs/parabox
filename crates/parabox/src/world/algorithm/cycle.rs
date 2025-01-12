@@ -29,7 +29,7 @@ impl<T, V> Cycle<T, V> {
             trace: Vec::with_capacity(TRACE_INIT_CAP),
         }
     }
-    
+
     pub fn pop(&mut self) -> Option<(T, V)> {
         self.trace.pop()
     }

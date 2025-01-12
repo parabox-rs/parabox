@@ -88,7 +88,7 @@ impl MetaTable {
     }
 
     /// Gets an iterator over the table. Sorted by name.
-    pub fn iter(&self) -> impl Iterator<Item=(EcoString, BlockKey)> + '_ {
+    pub fn iter(&self) -> impl Iterator<Item = (EcoString, BlockKey)> + '_ {
         self.names().into_iter().map(move |name| {
             let key = self.name_to_key.get(&name).unwrap();
             (name, *key)
@@ -125,7 +125,7 @@ impl Debug for MetaTable {
 /// See also trait [MetaName].
 pub trait MetaKey {
     /// The corresponding name meta type.
-    type Target: MetaName<Target=Self>;
+    type Target: MetaName<Target = Self>;
 
     /// Converts the key meta to the corresponding name meta.
     fn convert(&self, meta: &MetaTable) -> Result<Self::Target, BlockKey>;
@@ -140,7 +140,7 @@ pub trait MetaKey {
 /// See also trait [MetaKey].
 pub trait MetaName {
     /// The corresponding key meta type.
-    type Target: MetaKey<Target=Self>;
+    type Target: MetaKey<Target = Self>;
 
     /// Converts the name meta to the corresponding key meta.
     fn convert(&self, meta: &MetaTable) -> Result<Self::Target, EcoString>;

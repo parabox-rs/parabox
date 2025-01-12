@@ -141,12 +141,18 @@ mod tests {
 
         world.place(block, Position::inside(container1, (2, 1)));
         assert_eq!(world.blocks[container1].state.interior[2][1], Some(block));
-        assert_eq!(world[block].state.position, Position::inside(container1, (2, 1)));
+        assert_eq!(
+            world[block].state.position,
+            Position::inside(container1, (2, 1))
+        );
 
         world.place(block, Position::inside(container2, (3, 3)));
         assert_eq!(world.blocks[container1].state.interior[2][1], None);
         assert_eq!(world.blocks[container2].state.interior[3][3], Some(block));
-        assert_eq!(world[block].state.position, Position::inside(container2, (3, 3)));
+        assert_eq!(
+            world[block].state.position,
+            Position::inside(container2, (3, 3))
+        );
 
         world.place(block, Position::inside(block, (1, 1)));
         assert_eq!(world.blocks[container2].state.interior[3][3], None);

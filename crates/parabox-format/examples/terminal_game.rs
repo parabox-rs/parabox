@@ -93,7 +93,7 @@ impl MetaFmt for Wrapper {
         } else {
             color
         }
-            .on_default();
+        .on_default();
 
         match block.proto {
             ProtoType::Alias { .. } => style.italic(),
