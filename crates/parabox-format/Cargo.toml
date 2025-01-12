@@ -1,11 +1,14 @@
 [package]
 name = "parabox-format"
-version = "0.1.0"
+version.workspace = true
 edition.workspace = true
 readme.workspace = true
 license.workspace = true
 authors.workspace = true
 repository.workspace = true
+keywords = ["parabox", "format"]
+categories = ["games", "value-formatting"]
+description = "The terminal formatter for the Parabox game."
 
 [dependencies]
 parabox = { workspace = true }

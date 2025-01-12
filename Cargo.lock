@@ -65,7 +65,7 @@ dependencies = [
 
 [[package]]
 name = "parabox-format"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anstyle",
  "parabox",
@@ -75,7 +75,7 @@ dependencies = [
 
 [[package]]
 name = "parabox-macros"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -84,7 +84,7 @@ dependencies = [
 
 [[package]]
 name = "parabox-parser"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "ecow",
  "parabox",
@@ -95,7 +95,7 @@ dependencies = [
 
 [[package]]
 name = "parabox-tests"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "parabox",
  "parabox-macros",
