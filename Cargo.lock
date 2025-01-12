@@ -3,6 +3,12 @@
 version = 4
 
 [[package]]
+name = "anstyle"
+version = "1.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "55cc3b69f167a1ef2e161439aa98aed94e6028e5f9a59be9a6ffb47aef1651f9"
+
+[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -50,11 +56,21 @@ checksum = "b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39"
 
 [[package]]
 name = "parabox"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "parabox-macros",
  "slotmap",
  "tracing",
+]
+
+[[package]]
+name = "parabox-format"
+version = "0.1.0"
+dependencies = [
+ "anstyle",
+ "parabox",
+ "parabox-parser",
+ "slotmap",
 ]
 
 [[package]]
