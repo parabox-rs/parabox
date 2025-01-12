@@ -324,8 +324,7 @@ impl Algorithm {
 impl Algorithm {
     pub fn commit(&self, world: &mut World) {
         for movement in &self.movements {
-            let block = movement.key.get_mut(world);
-            block.state.position = movement.target;
+            world.place(movement.key, movement.target);
         }
     }
 }

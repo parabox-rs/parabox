@@ -108,3 +108,49 @@ impl Index<BlockKey> for World {
         &self.blocks[key]
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_insert() {
+        let mut world = World::new();
+        let key = world.insert(ProtoType::Wall);
+
+        assert_eq!(world.blocks.len(), 1);
+        assert_eq!(world.blocks[key].proto, ProtoType::Wall);
+    }
+
+    #[test]
+    fn test_remove() {
+        let mut world = World::new();
+        let key = world.insert(ProtoType::Wall);
+        world.remove(key);
+
+        assert_eq!(world.blocks.len(), 0);
+    }
+
+    #[test]
+    fn test_place() {
+        let mut world = World::new();
+
+        let container1 = world.insert(ProtoType::Box { size: (5, 5) });
+        let container2 = world.insert(ProtoType::Box { size: (5, 5) });
+        let block = world.insert(ProtoType::Box { size: (5, 5) });
+
+        world.place(block, Position::inside(container1, (2, 1)));
+        assert_eq!(world.blocks[container1].state.interior[2][1], Some(block));
+        assert_eq!(world[block].state.position, Position::inside(container1, (2, 1)));
+
+        world.place(block, Position::inside(container2, (3, 3)));
+        assert_eq!(world.blocks[container1].state.interior[2][1], None);
+        assert_eq!(world.blocks[container2].state.interior[3][3], Some(block));
+        assert_eq!(world[block].state.position, Position::inside(container2, (3, 3)));
+
+        world.place(block, Position::inside(block, (1, 1)));
+        assert_eq!(world.blocks[container2].state.interior[3][3], None);
+        assert_eq!(world.blocks[block].state.interior[1][1], Some(block));
+        assert_eq!(world[block].state.position, Position::inside(block, (1, 1)));
+    }
+}
